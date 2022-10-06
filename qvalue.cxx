@@ -1,5 +1,6 @@
 #include "qvalue.h"
 #include <iostream>
+#include <sstream>
 
 QValue::QValue(std::vector<Bit> values, bool negative) {
     value = values;
@@ -12,15 +13,20 @@ QValue::QValue(Bit value, bool negative) {
 }
 
 void QValue::Display() {
+    std::cout << GetString() << std::endl;
+}
+
+std::string QValue::GetString() {
+    std::stringstream stream;
     if (negative) {
-        std::cout << "-";
+        stream << "-";
     }
 
     for (auto bit : value) {
-        std::cout << bit.value;
+        stream << bit.value;
     }
 
-    std::cout << std::endl;
+    return stream.str();
 }
 
 QValue QValue::operator*(QValue other) {

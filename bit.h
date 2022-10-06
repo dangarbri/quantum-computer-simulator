@@ -7,4 +7,7 @@ class Bit {
 public:
     Bit(bool val) : value(val) {};
     bool value = false;
+
 };
+
+bool operator==(const Bit& a, const Bit& b);

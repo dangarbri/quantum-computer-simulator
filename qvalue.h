@@ -2,6 +2,7 @@
 
 // Circular reference... 
 #include "bit.h"
+#include <string>
 #include <vector>
 
 /**
@@ -38,6 +39,8 @@ public:
      * Print the contents of this QValue to the console.
      */
     void Display();
+
+    std::string GetString();
 
     /**
      * Combine two QValues. Order matters.

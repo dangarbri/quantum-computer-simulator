@@ -1,5 +1,5 @@
-SOURCES=main.cxx qvalue.cxx
-OBJECTS=main.o qvalue.o
+SOURCES=main.cxx qvalue.cxx qcompute.cxx bit.cxx
+OBJECTS=main.o qvalue.o qcompute.o bit.o
 
 main.h:
 
