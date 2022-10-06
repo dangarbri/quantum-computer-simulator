@@ -9,10 +9,38 @@
  */
 class QValue {
 public:
+    /**
+     * Constructs a QValue from a list of bits
+     */
     QValue(std::vector<Bit> values, bool negative);
+
+    /**
+     * Constructs a QValue from a single bit
+     */
     QValue(Bit value, bool negative);
+
+    /**
+     * Construct an empty QValue
+     */
+    QValue() {};
+
+    /**
+     * Store the string of bits
+     */
     std::vector<Bit> value;
+
+    /**
+     * Store the overall sign of this qvalue
+     */
     bool negative = false;
 
+    /**
+     * Print the contents of this QValue to the console.
+     */
     void Display();
+
+    /**
+     * Combine two QValues. Order matters.
+     */
+    QValue operator*(QValue other);
 };
