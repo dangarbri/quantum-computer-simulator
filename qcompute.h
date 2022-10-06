@@ -4,6 +4,8 @@
 #include <vector>
 #include <map>
 
+typedef void (*LogicFunction)(QValue&);
+
 /**
  * Represents a quantum computation performed on a QValue
  * Use this to perform superposition computations
@@ -31,6 +33,13 @@ public:
      * This updates the states field.
      */
     void Superposition(int index);
+
+    /**
+     * Executes a function that performs some operation on a QValue.
+     * This is used to execute some generic logic on the current QValue being processed.
+     * This function executes on all possible states of the QValue if the computation is in a superposition.
+     */
+    void ExecuteLogic(LogicFunction fn);
 
     /**
      * Performs a superposition on an individual bit in a QValue and returns the potential results.

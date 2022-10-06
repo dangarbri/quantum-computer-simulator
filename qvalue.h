@@ -47,3 +47,5 @@ public:
      */
     QValue operator*(QValue other);
 };
+
+bool operator== (const QValue& val, const std::string& str);

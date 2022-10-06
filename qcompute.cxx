@@ -80,3 +80,10 @@ void QCompute::Display() {
         std::cout << "    " << qval.GetString() << std::endl;
     }
 }
+
+void QCompute::ExecuteLogic(LogicFunction fn) {
+    for (auto& qval : states) {
+        fn(qval);
+    }
+}
+
